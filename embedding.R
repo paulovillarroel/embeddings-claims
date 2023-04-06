@@ -55,6 +55,9 @@ claims |>
   slice(7) |>
   select(class, description)
 
+
+# Analyce example
+
 enframe(embeddings_similarity[7, ], name = "claim", value = "similarity") |>
   arrange(-similarity)
 
