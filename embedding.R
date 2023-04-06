@@ -51,12 +51,11 @@ embeddings_similarity <- embeddings_similarity %*% t(embeddings_similarity)
 dim(embeddings_similarity)
 
 
+# Analyze example
+
 claims |>
   slice(7) |>
   select(class, description)
-
-
-# Analyze example
 
 enframe(embeddings_similarity[7, ], name = "claim", value = "similarity") |>
   arrange(-similarity)
